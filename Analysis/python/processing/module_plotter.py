@@ -146,6 +146,7 @@ if __name__ ==  '__main__':
                     if h is None: continue
 
                     if not htitle: htitle = h.title
+                    
                     h.title = ds
                     if args.normsig>0:
                         h.title += ' (norm.)'
@@ -157,10 +158,12 @@ if __name__ ==  '__main__':
                         if h.integral(overflow=True)>0:
                             h.scale( args.normsigxsec/genxsec[mboundstate] )
                     if args.overflow:
-                        h = h.merge_bins([(-2, -1),])
-                        # h.SetBinContent(h.nbins(), h.GetBinContent(h.nbins())+h.overflow())
-                        # h.SetBinError(h.nbins(), math.sqrt(h[h.nbins()].value))
-                    if args.underflow: h = h.merge_bins([(0, 1),])
+#                        h = h.merge_bins([(-2, -1),])
+                         h.SetBinContent(h.nbins(), h.GetBinContent(h.nbins())+h.overflow())
+                         h.SetBinError(h.nbins(), math.sqrt(h[h.nbins()].value))
+                    if args.underflow: 
+                        h.SetBinContent(1, h.GetBinContent(1)+h.GetBinContent(0))
+#                        h = h.merge_bins([(0, 1),])
 
                     h.drawstyle = 'hist'
                     h.color = sigCOLORS[i]
