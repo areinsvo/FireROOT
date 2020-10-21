@@ -137,7 +137,7 @@ if __name__ == '__main__':
                 if ds not in sigDS_4mu or not sigDS_4mu[ds]: continue
                 packages = []
                 historesult = []
-                pool = Pool(processes=min(len(sigDS_4mu[ds]), 12))
+                pool = Pool(processes=min(len(sigDS_4mu[ds]), 2))
                 for f in sigDS_4mu[ds]:
                     packages.append((ds, [f], sigSCALE_4mu[ds], args.maxevents, ['4mu',]))
                 for res in tqdm(pool.imap_unordered(dofill, packages), total=len(packages)):
@@ -172,7 +172,7 @@ if __name__ == '__main__':
                 if ds not in sigDS_2mu2e or not sigDS_2mu2e[ds]: continue
                 packages = []
                 historesult = []
-                pool = Pool(processes=min(len(sigDS_2mu2e[ds]), 12))
+                pool = Pool(processes=min(len(sigDS_2mu2e[ds]), 2))
                 for f in sigDS_2mu2e[ds]:
                     packages.append((ds, [f], sigSCALE_2mu2e[ds], args.maxevents, ['2mu2e',]))
                 for res in tqdm(pool.imap_unordered(dofill, packages), total=len(packages)):
@@ -269,7 +269,7 @@ if __name__ == '__main__':
 
         packages = []
         historesult = []
-        pool = Pool(processes=min(len(_files), 12))
+        pool = Pool(processes=min(len(_files), 2))
 
         for f in _files:
             packages.append(([f], args.maxevents, args.channel))

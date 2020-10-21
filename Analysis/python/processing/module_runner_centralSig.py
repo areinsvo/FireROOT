@@ -74,7 +74,7 @@ if __name__ == '__main__':
 
     def dofill(pack):
         ds, files, scale, maxevents, channel = pack
-        events_ = imp.MyEvents(files=files, type='MC', maxevents=maxevents, channel=channel)
+        events_ = imp.MyEvents(files=files, type='MC', dtag=ds, maxevents=maxevents, channel=channel)
         events_.setScale(scale)
 
         for chan in events_.channel:
@@ -105,7 +105,7 @@ if __name__ == '__main__':
     if '4mu' in args.channel:
         packages = []
         SigHists4mu = []
-        pool = Pool(processes=12)
+        pool = Pool(processes=2)
 
         for i, ds in enumerate(sampleSig, start=1):
             if ds not in sigDS_4mu or not sigDS_4mu[ds]: continue
@@ -122,11 +122,12 @@ if __name__ == '__main__':
     if '2mu2e' in args.channel:
         packages = []
         SigHists2mu2e = []
-        pool = Pool(processes=12)
+        pool = Pool(processes=2)
 
         for i, ds in enumerate(sampleSig, start=1):
             if ds not in sigDS_2mu2e or not sigDS_2mu2e[ds]: continue
             packages.append((ds, sigDS_2mu2e[ds], sigSCALE_2mu2e[ds], args.maxevents, ['2mu2e',]))
+
         for res in tqdm.tqdm(pool.imap_unordered(dofill, packages), total=len(packages)):
             SigHists2mu2e.append(res)
         pool.close()
