@@ -1,0 +1,11 @@
+{
+    "mXX-500_mA-1p2_lxy-300_ctau-19": [
+        "root://cmseos.fnal.gov//store/group/lpcmetx/SIDM/test2/ffNtupleV2/2018/SIDM_XXTo2ATo2Mu2E_mXX-500_mA-1p2_ctau-19_TuneCP5_13TeV-madgraph-pythia8/RunIIAutumn18DRPremix-102X_upgrade2018_realistic_v15-v1/201014_220450/0000/ffNtuple_1.root",
+        "root://cmseos.fnal.gov//store/group/lpcmetx/SIDM/test2/ffNtupleV2/2018/SIDM_XXTo2ATo2Mu2E_mXX-500_mA-1p2_ctau-19_TuneCP5_13TeV-madgraph-pythia8/RunIIAutumn18DRPremix-102X_upgrade2018_realistic_v15-v1/201014_220450/0000/ffNtuple_2.root"
+],
+"mXX-500_mA-0p25_lxy-300_ctau-4" : [
+    "root://cmseos.fnal.gov//store/group/lpcmetx/SIDM/test2/ffNtupleV2/2018/SIDM_XXTo2ATo2Mu2E_mXX-500_mA-0p25_ctau-4_TuneCP5_13TeV-madgraph-pythia8/RunIIAutumn18DRPremix-102X_upgrade2018_realistic_v15-v1/201023_200321/0000/ffNtuple_1.root",
+    "root://cmseos.fnal.gov//store/group/lpcmetx/SIDM/test2/ffNtupleV2/2018/SIDM_XXTo2ATo2Mu2E_mXX-500_mA-0p25_ctau-4_TuneCP5_13TeV-madgraph-pythia8/RunIIAutumn18DRPremix-102X_upgrade2018_realistic_v15-v1/201023_200321/0000/ffNtuple_2.root",
+    "root://cmseos.fnal.gov//store/group/lpcmetx/SIDM/test2/ffNtupleV2/2018/SIDM_XXTo2ATo2Mu2E_mXX-500_mA-0p25_ctau-4_TuneCP5_13TeV-madgraph-pythia8/RunIIAutumn18DRPremix-102X_upgrade2018_realistic_v15-v1/201023_200321/0000/ffNtuple_3.root"
+]
+}
