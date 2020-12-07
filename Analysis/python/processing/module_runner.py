@@ -76,16 +76,18 @@ if __name__ == '__main__':
         sampleSig = 'mXX-150_mA-0p25_lxy-300|mXX-500_mA-1p2_lxy-300|mXX-800_mA-5_lxy-300'.split('|')
         sampleSig.extend( 'mXX-100_mA-5_lxy-0p3|mXX-1000_mA-0p25_lxy-0p3'.split('|') )
         if args.sigparam:
+            print("Checking matching samples now", args.sigparam)
             sampleSig = []
             for s in args.sigparam:
                 if '*' in s or '?' in s:
                     sampleSig.extend( fnmatch.filter(sdml.get_datasets('4mu').keys(), s) )
                 else: sampleSig.append(s)
             sampleSig = list(set(sampleSig))
-            print(sampleSig)
+            print("Using these samples:",sampleSig)
 
         def dofill(pack):
             ds, files, scale, maxevents, channel = pack
+#            events_ = imp.MyEvents(files=files, type='MC', maxevents=maxevents, channel=channel)
             events_ = imp.MyEvents(files=files, type='MC', dtag=ds, maxevents=maxevents, channel=channel)
             events_.setScale(scale)
 
